@@ -73,6 +73,8 @@ public class LoginActivity extends AppCompatActivity  {
     private View mProgressView;
     private View mLoginFormView;
 
+    public User user;
+
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
 
@@ -122,6 +124,7 @@ public class LoginActivity extends AppCompatActivity  {
         // Check auth on Activity start
         if (mAuth.getCurrentUser() != null) {
             Log.d("TAG", "CURRENT USER DETECTED:    " + mAuth.getCurrentUser().getEmail() );
+            user = new User (mAuth.getCurrentUser().getEmail());
         }
     }
 
@@ -231,6 +234,8 @@ public class LoginActivity extends AppCompatActivity  {
                                         Toast.LENGTH_LONG).show();
                             }
                             else{
+
+                                user = new User(mAuth.getCurrentUser().getEmail());
                                 /*
                                 Intent intent = new Intent(this, ScheduleActivity.class);
                                 Bundle b = new Bundle();
