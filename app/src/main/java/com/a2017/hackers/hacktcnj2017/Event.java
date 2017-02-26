@@ -1,6 +1,7 @@
 package com.a2017.hackers.hacktcnj2017;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * Created by user on 2/25/2017.
@@ -13,9 +14,19 @@ public class Event {
     private String name;
     private String location;
     private String timeInformation;
-    private ArrayList<User> mUsersList;
+    private ArrayList<Users> mUsersList;
+    private UUID mUUID;
 
-    public Event(String name, String location, String timeInformation, ArrayList<User> mUsersList) {
+    public UUID getmUUID() {
+        return mUUID;
+    }
+
+    public void setmUUID(UUID mUUID) {
+        this.mUUID = mUUID;
+    }
+
+    public Event(String name, String location, String timeInformation) {
+        this.mUUID = UUID.randomUUID();
         this.name = name;
         this.location = location;
         this.timeInformation = timeInformation;
@@ -46,11 +57,11 @@ public class Event {
         this.timeInformation = timeInformation;
     }
 
-    public ArrayList<User> getmUsersList() {
+    public ArrayList<Users> getmUsersList() {
         return mUsersList;
     }
 
-    public void setmUsersList(ArrayList<User> mUsersList) {
+    public void setmUsersList(ArrayList<Users> mUsersList) {
         this.mUsersList = mUsersList;
     }
 }
