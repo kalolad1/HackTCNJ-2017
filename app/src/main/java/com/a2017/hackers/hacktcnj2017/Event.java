@@ -14,7 +14,7 @@ public class Event {
     private String name;
     private String location;
     private String timeInformation;
-    private ArrayList<Users> mUsersList;
+    private ArrayList<User> mUsersList;
     private UUID mUUID;
 
     public UUID getmUUID() {
@@ -25,12 +25,12 @@ public class Event {
         this.mUUID = mUUID;
     }
 
-    public Event(String name, String location, String timeInformation) {
+    public Event(String name, String location, String timeInformation, ArrayList<User> u) {
         this.mUUID = UUID.randomUUID();
         this.name = name;
         this.location = location;
         this.timeInformation = timeInformation;
-        this.mUsersList = mUsersList;
+        this.mUsersList = u;
     }
 
     public String getName() {
@@ -57,11 +57,11 @@ public class Event {
         this.timeInformation = timeInformation;
     }
 
-    public ArrayList<Users> getmUsersList() {
+    public ArrayList<User> getmUsersList() {
         return mUsersList;
     }
 
-    public void setmUsersList(ArrayList<Users> mUsersList) {
+    public void setmUsersList(ArrayList<User> mUsersList) {
         this.mUsersList = mUsersList;
     }
 }
